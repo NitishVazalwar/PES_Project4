@@ -1,5 +1,5 @@
-# PES Project3 README  
-Authors: Kristina Brunsgaard, Nitish Vazalwar 
+# PES Project4  README  
+Author: Nitish Vazalwar 
 
 **Repository Comments**  
 _Contains:_  
@@ -25,11 +25,11 @@ _Contains:_
 * uCUnit-v1.0.h - Header file for uCUnit test suite  
 
 **Project Comments**  
-This project was pretty straightforward. I started with implementing I2C protocol for the LIS331 external accelerometer, even captured the scope images for read and write commands with the acknowlegemen back from the accelerometer. However, it proved troublesome with the LIS to get the correct data, hence I shifted to the internal accelerometer. I found implementing State Machine 2 (table driven) a bit challenging. Matiching the timing of the Slider with the Systick Timer proved difficult.
+This project was pretty straightforward. I started with implementing I2C protocol for the LIS331 external accelerometer, even captured the scope images for read and write commands with the acknowlegement back from the accelerometer. However, it proved troublesome with the LIS to get the correct data, hence I shifted to the internal accelerometer. I found implementing State Machine 2 (table driven) a bit challenging. Matiching the timing of the Slider with the Systick Timer proved difficult.
 
 **Installation/Execution Notes**  
 Developed using MCUExpresso on Windows.  
-Four configurations:
+Two  configurations:
 * DEFINE ENABLE_LOGGER - Print debug messages using logger to UART terminal.
 * UNDEFINE ENABLE_LOGGER - Don't print debug messages using to UART terminal.
 
