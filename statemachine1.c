@@ -10,6 +10,8 @@
 #include "statemachine1.h"
 #include "timer.h"
 #include "delay.h"
+#include "logger.h"
+#include "uCUnit-v1.0.h"
 
 uint8_t n=0;
 
@@ -22,6 +24,7 @@ void Statemachine1(void)
 	{
 	case sReadXYZ:
 		{
+			UCUNIT_CheckIsEqual(0,currentevent);
 			if(currentevent==ePass || currentevent==eTimeout)
 			{
 				read_full_xyz();
@@ -53,6 +56,7 @@ void Statemachine1(void)
 		}
 	case sDisplay :
 		{
+			UCUNIT_CheckIsEqual(3,currentevent);
 			if(currentevent==eComplete)
 			{
 				DisplayXYZ();
@@ -68,7 +72,7 @@ void Statemachine1(void)
 	case sPollSlider :
 		{
 
-
+			UCUNIT_CheckIsEqual(3,currentevent);
 			if(currentevent==eComplete)
 			{
 				Touch_Init();
@@ -84,12 +88,14 @@ void Statemachine1(void)
 
 					touch_val=Touch_Scan_LH1();
 					printf("\nTouch_val has value is %d",touch_val);
-					if (touch_val>=800 && touch_val<1000)
+					Log_string("TouchSensor has value ", NEWLINE);
+					Log_integer(touch_val);
+					if (touch_val>=650 && touch_val<750)
 					{
 						currentevent=eLeftSlider;state=nextStatemachine;break;
 
 					}
-					else if(touch_val>1000)
+					else if(touch_val>800)
 					{
 						currentevent=eRightSlider;state=sEnd;break;
 					}
@@ -105,6 +111,7 @@ void Statemachine1(void)
 
 	case sDisconnect :
 	{
+		UCUNIT_CheckIsEqual(2,currentevent);
 		if(currentevent==eDisconnnected)
 		{
 			printf("\nDisconnected !");
@@ -123,6 +130,8 @@ void Statemachine1(void)
 		}
 	case nextStatemachine :
 		{
+			UCUNIT_CheckIsEqual(4,currentevent);
+			UCUNIT_CheckIsEqual(6,currentevent);
 			if(currentevent==eLeftSlider || currentevent==eTimeout)
 			{
 				//statemachine2();

@@ -48,12 +48,12 @@ void PollSliderHandler(void)
 						printf("\nTouch_val has value is %d",touch_val);
 						if (touch_val>=800 && touch_val<1000)
 						{
-							currentevent=eLeftSlider;state=nextStatemachine;break;
+							currentevent=eLeftSlider;state=nextStatemachine;Statemachine1();
 
 						}
 						else if(touch_val>1000)
 						{
-							currentevent=eRightSlider;state=sEnd;break;
+							currentevent=eRightSlider;state=sEnd;Statemachine1();
 						}
 
 

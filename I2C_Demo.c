@@ -12,7 +12,7 @@
 #include "selftest.h"
 #include "typedef.h"
 #include "logger.h"
-#define ENABLE_LOGGER 1
+//#define ENABLE_LOGGER 1
 
 
 
@@ -80,12 +80,15 @@ int main(void)
 	}
 	Delay(500);
 	int ST=self_test();
-	printf("\nValue of ST is %d",ST);
+
+
 	if(1==ST)
 	{
+		Log_string("Self Test Fail", NEWLINE);
 		Control_RGB_LEDs(1, 0, 0);
 		return 1;
 	}
+	Log_string("Self Test Pass", NEWLINE);
 	Control_RGB_LEDs(0, 1, 0);
 	Delay(100);
 	Control_RGB_LEDs(0, 0, 0);
