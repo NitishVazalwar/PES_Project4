@@ -10,6 +10,6 @@
 void Init_RGB_LEDs(void);
 void Control_RGB_LEDs(unsigned int red_on, unsigned int green_on, unsigned int blue_on);
 void Toggle_RGB_LEDs(unsigned int red, unsigned int green, unsigned int blue);
-
+void led_off(void);
 #endif
 

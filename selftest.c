@@ -39,7 +39,7 @@ int self_test(void)
 	printf("\nDiff_x is %d ",diff_x);
 	printf("\nDiff_y is %d ",diff_y);
 	printf("\nDiff_z is %d ",diff_z);
-	if((diff_x <= 200))// && (diff_x <= 180))
+	if((diff_x <= 500))// && (diff_x <= 180))
 	{
 		flag_x = 1;
 		printf("Flag x is set");

@@ -12,7 +12,7 @@
 #include "selftest.h"
 #include "typedef.h"
 #include "logger.h"
-//#define ENABLE_LOGGER 1
+#define ENABLE_LOGGER 1
 
 
 

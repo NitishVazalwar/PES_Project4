@@ -60,9 +60,9 @@ void Statemachine1(void)
 			if(currentevent==eComplete)
 			{
 				DisplayXYZ();
-				printf("\n-------");
-				avg_xyz();
-				printf("\n-------");
+//				printf("\n-------");
+//				avg_xyz();
+//				printf("\n-------");
 				state=sPollSlider;
 				currentevent=eComplete;
 			}

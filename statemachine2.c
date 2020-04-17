@@ -108,8 +108,8 @@ const struct commandStruct *commandPtr = commands;
    		commandPtr = commands; /* Set ptr back to beginning */
    		for (uint8_t j = 0; j < 6; j++)
    		{	/* Iterate through every command */
-   			//if (commandScript[i].name == commands[j].name)
-   			//if (Current_state==command[j].name)
+   			//if (commandStruct[i].name == commands[j].name)
+
    			{
    				command = commandPtr->execute;
    				command();

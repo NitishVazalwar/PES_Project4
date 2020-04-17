@@ -78,6 +78,8 @@ void DisplayXYZ(void)
 	printf("\nYcoordinate is %d",acc_Y);
 	printf("\nZcoordinate is %d",acc_Z);
 	printf("\n");
+	avg_xyz();
+
 }
 
 void read_xyz(void)
